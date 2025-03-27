@@ -14,7 +14,7 @@ import {
 } from "../firebaseConfig";
 import "../styles.css";
 
-const RecipeForm = ({ recipe, onRecipeAdded }) => {
+const receta = ({ recipe, onRecipeAdded }) => {
   const [title, setTitle] = useState(recipe?.title || "");
   const [description, setDescription] = useState(recipe?.description || "");
   const [image, setImage] = useState(null);
@@ -66,4 +66,4 @@ const RecipeForm = ({ recipe, onRecipeAdded }) => {
   );
 };
 
-export default RecipeForm;
+export default receta;

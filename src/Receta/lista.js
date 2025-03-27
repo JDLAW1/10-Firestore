@@ -4,7 +4,7 @@ import { db, collection } from "../firebaseConfig";
 import RecipeItem from "./item";
 import "../styles.css";
 
-const RecipeList = ({ onRecipeEdit }) => {
+const lista = ({ onRecipeEdit }) => {
   const [recipes, loading, error] = useCollection(collection(db, "recipes"));
 
   if (loading) return <p>No hay recetas</p>;
@@ -13,14 +13,16 @@ const RecipeList = ({ onRecipeEdit }) => {
   return (
     <div>
       {recipes?.docs.map((recipe) => (
-        <RecipeItem
-          key={recipe.id}
-          recipe={{ id: recipe.id, ...recipe.data() }}
-          onRecipeEdit={onRecipeEdit}
-        />
+        <div key={receta.id}>
+          <RecipeItem
+            key={recipe.id}
+            recipe={{ id: recipe.id, ...recipe.data() }}
+            onRecipeEdit={onRecipeEdit}
+          />
+        </div>
       ))}
     </div>
   );
 };
 
-export default RecipeList;
+export default lista;

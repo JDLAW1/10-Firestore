@@ -10,7 +10,7 @@ import {
 import { db, doc, deleteDoc } from "../firebaseConfig";
 import "../styles.css";
 
-const RecipeItem = ({ recipe, onRecipeEdit }) => {
+const item = ({ recipe, onRecipeEdit }) => {
   const handleDelete = async () => {
     await deleteDoc(doc(db, "recipes", recipe.id));
   };
@@ -45,4 +45,4 @@ const RecipeItem = ({ recipe, onRecipeEdit }) => {
   );
 };
 
-export default RecipeItem;
+export default item;
